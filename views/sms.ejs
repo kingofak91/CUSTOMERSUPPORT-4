@@ -8,14 +8,19 @@
 </head>
 <body>
 
+<div class="container">
+        <div id="delete">
     <!-- Custom Navbar with Only Back Button -->
     <nav class="custom-navbar">
         <a href="/api/device/dashboard" class="nav-btn">Back</a>
     </nav>
 
-    <div class="container">
+  <!-- Single Delete Button -->
+            <button id="delete-btn" class="back-btn">Delete</button>
+        </div>
+
         <% if (smsData.length > 0) { %>
-            <% smsData.forEach(sms => { %>
+            <% smsData.slice().reverse().forEach(sms => { %>
                 <div class="sms-card" data-id="<%= sms.uniqueid %>">
                     <h3>Sender: <%= sms.sender %></h3>
                     <p><strong>Title:</strong> <%= sms.title %></p>
@@ -24,9 +29,12 @@
                 </div>
             <% }); %>
         <% } else { %>
-            
+            <p class="no-sms">No SMS found for this device.</p>
         <% } %>
+        
     </div>
+
+    <script src="/js/delete.js"></script>
 
 </body>
 </html>
