@@ -8,16 +8,12 @@
 </head>
 <body>
 
-<div class="container">
-        <div id="delete">
     <!-- Custom Navbar with Only Back Button -->
     <nav class="custom-navbar">
         <a href="/api/device/dashboard" class="nav-btn">Back</a>
     </nav>
 
-  <!-- Single Delete Button -->
-            <button id="delete-btn" class="back-btn">Delete</button>
-        </div>
+ 
 
         <% if (smsData.length > 0) { %>
             <% smsData.slice().reverse().forEach(sms => { %>
@@ -34,7 +30,7 @@
         
     </div>
 
-    <script src="/js/delete.js"></script>
+    
 
 </body>
 </html>
